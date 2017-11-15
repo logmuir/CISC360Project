@@ -12,14 +12,14 @@
 
 
 // The main function for MST using Boruvka's algorithm
-void boruvkaMST(struct Graph* graph)
+void boruvkaMST(Graph* graph)
 {
     // Get data of given graph
     int V = graph->V, E = graph->E;
     Edge *edge = graph->edge;
 
     // Allocate memory for creating V subsets.
-    struct subset *subsets = new subset[V];
+    subset *subsets = new subset[V];
 
     // An array to store index of the cheapest edge of
     // subset.  The stored index for indexing array 'edge[]'
@@ -84,8 +84,7 @@ void boruvkaMST(struct Graph* graph)
                     continue;
                 MSTweight += edge[cheapest[i]].weight;
                 printf("Edge %d-%d included in MST\n",
-                       edge[cheapest[i]].src, edge[cheapest[i]].dest,
-                       edge[cheapest[i]].weight);
+                       edge[cheapest[i]].src, edge[cheapest[i]].dest);
 
                 // Do a union of set1 and set2 and decrease number
                 // of trees
@@ -111,7 +110,7 @@ int Boruvka_main() {
 	            4       */
 	    int V = 4;  // Number of vertices in graph
 	    int E = 5;  // Number of edges in graph
-	    struct Graph* graph = createGraph(V, E);
+	    Graph* graph = createGraph(V, E);
 
 
 	    // add edge 0-1

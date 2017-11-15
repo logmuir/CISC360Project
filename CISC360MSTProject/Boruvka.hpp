@@ -8,7 +8,8 @@
 #ifndef BORUVKA_HPP_
 #define BORUVKA_HPP_
 
-
+void boruvkaMST(struct Graph* graph);
+int Boruvka_main();
 
 
 

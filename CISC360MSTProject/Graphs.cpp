@@ -11,7 +11,7 @@
 
 // A utility function to find set of an element i
 // (uses path compression technique)
-int find(struct subset subsets[], int i) {
+int find(subset subsets[], int i) {
 	// find root and make root as parent of i
 	// (path compression)
 	if (subsets[i].parent != i)
@@ -22,7 +22,7 @@ int find(struct subset subsets[], int i) {
 
 // A function that does union of two sets of x and y
 // (uses union by rank)
-void Union(struct subset subsets[], int x, int y) {
+void Union(subset subsets[], int x, int y) {
 	int xroot = find(subsets, x);
 	int yroot = find(subsets, y);
 
@@ -44,8 +44,8 @@ void Union(struct subset subsets[], int x, int y) {
 // Compare two edges according to their weights.
 // Used in qsort() for sorting an array of edges
 int myComp(const void* a, const void* b) {
-	struct Edge* a1 = (struct Edge*) a;
-	struct Edge* b1 = (struct Edge*) b;
+	Edge* a1 = (Edge*) a;
+	Edge* b1 = (Edge*) b;
 	return a1->weight > b1->weight;
 }
 

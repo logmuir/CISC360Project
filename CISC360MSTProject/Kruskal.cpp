@@ -10,10 +10,10 @@
 #include "Graphs.hpp"
 
 // The main function to construct MST using Kruskal's algorithm
-void KruskalMST(struct Graph* graph)
+void KruskalMST(Graph* graph)
 {
     int V = graph->V;
-    struct Edge result[V];  // Tnis will store the resultant MST
+    Edge result[V];  // Tnis will store the resultant MST
     int e = 0;  // An index variable, used for result[]
     int i = 0;  // An index variable, used for sorted edges
 
@@ -23,9 +23,9 @@ void KruskalMST(struct Graph* graph)
     // array of edges
     qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp);
 
-    // Allocate memory for creating V ssubsets
-    struct subset *subsets =
-        (struct subset*) malloc( V * sizeof(struct subset) );
+    // Allocate memory for creating V subsets
+    subset *subsets =
+        (subset*) malloc( V * sizeof(subset) );
 
     // Create V subsets with single elements
     for (int v = 0; v < V; ++v)
@@ -39,7 +39,7 @@ void KruskalMST(struct Graph* graph)
     {
         // Step 2: Pick the smallest edge. And increment
         // the index for next iteration
-        struct Edge next_edge = graph->edge[i++];
+        Edge next_edge = graph->edge[i++];
 
         int x = find(subsets, next_edge.src);
         int y = find(subsets, next_edge.dest);
@@ -78,7 +78,7 @@ int Kruskal_main() {
 	 4       */
 	int V = 4;  // Number of vertices in graph
 	int E = 5;  // Number of edges in graph
-	struct Graph* graph = createGraph(V, E);
+	Graph* graph = createGraph(V, E);
 
 	// add edge 0-1
 	graph->edge[0].src = 0;
