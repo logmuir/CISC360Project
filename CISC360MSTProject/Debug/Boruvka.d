@@ -1,1 +1,3 @@
-Boruvka.o: ../Boruvka.cpp
+Boruvka.o: ../Boruvka.cpp ../Graphs.hpp
+
+../Graphs.hpp:

@@ -1,1 +1,0 @@
-Kruskal.o: ../Kruskal.cpp

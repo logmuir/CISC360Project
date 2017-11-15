@@ -5,18 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Boruvka.cpp \
+../Graphs.cpp \
 ../Kruskal.cpp \
 ../Main.cpp \
 ../Prim.cpp 
 
 OBJS += \
 ./Boruvka.o \
+./Graphs.o \
 ./Kruskal.o \
 ./Main.o \
 ./Prim.o 
 
 CPP_DEPS += \
 ./Boruvka.d \
+./Graphs.d \
 ./Kruskal.d \
 ./Main.d \
 ./Prim.d 
