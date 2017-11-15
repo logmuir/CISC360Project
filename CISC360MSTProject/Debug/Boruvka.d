@@ -1,0 +1,1 @@
+Boruvka.o: ../Boruvka.cpp
