@@ -28,7 +28,7 @@ struct Graph {
 	// Since the graph is undirected, the edge
 	// from src to dest is also edge from dest
 	// to src. Both are counted as 1 edge here.
-	struct Edge* edge;
+	Edge* edge;
 };
 
 
