@@ -8,7 +8,9 @@
 #ifndef KRUSKAL_HPP_
 #define KRUSKAL_HPP_
 
-void KruskalMST(struct Graph* graph);
+#include "Graphs.hpp"
+
+void KruskalMST(Graph* graph);
 int Kruskal_main();
 
 

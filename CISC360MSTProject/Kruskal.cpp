@@ -7,6 +7,7 @@
 
 // C++ program for Kruskal's algorithm to find Minimum Spanning Tree
 // of a given connected, undirected and weighted graph
+
 #include "Graphs.hpp"
 
 // The main function to construct MST using Kruskal's algorithm
