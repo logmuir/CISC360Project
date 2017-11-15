@@ -9,8 +9,7 @@
 // Tree of a given connected, undirected and
 // weighted graph
 
-#include "Graphs.hpp"
-
+#include "Boruvka.hpp"
 
 // The main function for MST using Boruvka's algorithm
 void boruvkaMST(Graph* graph)
