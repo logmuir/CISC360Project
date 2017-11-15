@@ -50,8 +50,8 @@ struct subset {
 };
 
 
-int find(struct subset subsets[], int i);
-void Union(struct subset subsets[], int x, int y);
+int find(subset subsets[], int i);
+void Union(subset subsets[], int x, int y);
 int myComp(const void* a, const void* b);
 
 
