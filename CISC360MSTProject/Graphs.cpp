@@ -9,6 +9,17 @@
 #include "Graphs.hpp"
 
 
+// Creates a graph with V vertices and E edges
+Graph* createGraph(int V, int E) {
+	Graph* graph = new Graph;
+	graph->V = V;
+	graph->E = E;
+
+	graph->edge = new Edge[E];
+
+	return graph;
+}
+
 // A utility function to find set of an element i
 // (uses path compression technique)
 int find(subset subsets[], int i) {

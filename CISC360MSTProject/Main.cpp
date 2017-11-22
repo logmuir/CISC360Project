@@ -10,7 +10,9 @@
 #include "Prim.hpp"
 
 int main() {
-	Boruvka_main();
-	Kruskal_main();
+
+	Graph* graph = createGraph(3, 4);
+	Boruvka_main(graph);
+	Kruskal_main(graph);
 }
 

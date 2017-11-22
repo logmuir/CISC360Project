@@ -11,7 +11,7 @@
 #include "Graphs.hpp"
 
 void boruvkaMST(Graph* graph);
-int Boruvka_main();
+int Boruvka_main(Graph* graph);
 
 
 

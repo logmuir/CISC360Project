@@ -67,7 +67,7 @@ void KruskalMST(Graph* graph)
 
 // Driver program to test above functions
 
-int Kruskal_main() {
+int Kruskal_main(Graph* graph2) {
 
 	/* Let us create following weighted graph
 	 10
@@ -77,9 +77,9 @@ int Kruskal_main() {
 	 |      \ |
 	 2--------3
 	 4       */
-	int V = 4;  // Number of vertices in graph
-	int E = 5;  // Number of edges in graph
-	Graph* graph2 = createGraph(V, E);
+	//int V = 4;  // Number of vertices in graph
+	//int E = 5;  // Number of edges in graph
+	//Graph* graph2 = createGraph(V, E);
 
 	// add edge 0-1
 	graph2->edge[0].src = 0;

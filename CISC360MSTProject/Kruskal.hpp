@@ -11,7 +11,7 @@
 #include "Graphs.hpp"
 
 void KruskalMST(Graph* graph);
-int Kruskal_main();
+int Kruskal_main(Graph* graph);
 
 
 

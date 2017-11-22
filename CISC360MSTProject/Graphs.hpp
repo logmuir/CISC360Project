@@ -32,17 +32,6 @@ struct Graph {
 };
 
 
-// Creates a graph with V vertices and E edges
-struct Graph* createGraph(int V, int E) {
-	Graph* graph = new Graph;
-	graph->V = V;
-	graph->E = E;
-
-	graph->edge = new Edge[E];
-
-	return graph;
-}
-
 // A structure to represent a subset for union-find
 struct subset {
 	int parent;
@@ -53,7 +42,7 @@ struct subset {
 int find(subset subsets[], int i);
 void Union(subset subsets[], int x, int y);
 int myComp(const void* a, const void* b);
-
+Graph* createGraph(int V, int E);
 
 
 

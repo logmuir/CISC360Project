@@ -9,6 +9,7 @@
 // The program is for adjacency matrix representation of the graph
 #include <stdio.h>
 #include <limits.h>
+#include "Prim.hpp"
 
 // Number of vertices in the graph
 #define V 5
