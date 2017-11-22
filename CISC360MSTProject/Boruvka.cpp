@@ -140,6 +140,6 @@ int Boruvka_main(Graph* graph1) {
 
 	    boruvkaMST(graph1);
 
-	    return 0;
+	    return (0);
 }
 

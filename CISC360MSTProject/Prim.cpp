@@ -24,7 +24,7 @@ int minKey(int key[], bool mstSet[]) {
 		if (mstSet[v] == false && key[v] < min)
 			min = key[v], min_index = v;
 
-	return min_index;
+	return (min_index);
 }
 
 // A utility function to print the constructed MST stored in parent[]
@@ -32,7 +32,7 @@ int printPrimMST(int parent[], int n, int graph[V][V]) {
 	printf("Edge   Weight\n");
 	for (int i = 1; i < V; i++)
 		printf("%d - %d    %d \n", parent[i], i, graph[i][parent[i]]);
-	return 1;
+	return (1);
 }
 
 // Function to construct and print MST for a graph represented using adjacency
@@ -73,6 +73,7 @@ void primMST(int graph[V][V]) {
 
 	// print the constructed MST
 	printPrimMST(parent, V, graph);
+	return;
 }
 
 // driver program to test above function
@@ -91,6 +92,6 @@ int Prim_main() {
 	// Print the solution
 	primMST(graph);
 
-	return 0;
+	return (0);
 }
 

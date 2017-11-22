@@ -108,6 +108,6 @@ int Kruskal_main(Graph* graph2) {
 
 	KruskalMST(graph2);
 
-	return 0;
+	return (0);
 }
 

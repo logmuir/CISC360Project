@@ -17,7 +17,7 @@ Graph* createGraph(int V, int E) {
 
 	graph->edge = new Edge[E];
 
-	return graph;
+	return (graph);
 }
 
 // A utility function to find set of an element i
@@ -28,7 +28,7 @@ int find(subset subsets[], int i) {
 	if (subsets[i].parent != i)
 		subsets[i].parent = find(subsets, subsets[i].parent);
 
-	return subsets[i].parent;
+	return (subsets[i].parent);
 }
 
 // A function that does union of two sets of x and y
@@ -57,7 +57,7 @@ void Union(subset subsets[], int x, int y) {
 int myComp(const void* a, const void* b) {
 	Edge* a1 = (Edge*) a;
 	Edge* b1 = (Edge*) b;
-	return a1->weight > b1->weight;
+	return (a1->weight > b1->weight);
 }
 
 

@@ -11,7 +11,7 @@
 
 int main() {
 
-	Graph* graph = createGraph(3, 4);
+	Graph* graph = createGraph(4, 5);
 	Boruvka_main(graph);
 	Kruskal_main(graph);
 }
