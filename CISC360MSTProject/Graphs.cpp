@@ -8,7 +8,6 @@
 
 #include "Graphs.hpp"
 
-
 // Creates a graph with V vertices and E edges
 Graph* createGraph(int V, int E, Edge* edges) {
 	Graph* graph = new Graph;
@@ -24,6 +23,8 @@ Graph* createGraph(int V, int E) {
 	Graph* graph = new Graph;
 	graph->V = V;
 	graph->E = E;
+
+	graph->edge;
 
 	return (graph);
 }

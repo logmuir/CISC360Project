@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
+//using namespace std;
 
 
 // a structure to represent a weighted edge in graph
@@ -44,7 +44,8 @@ int find(subset subsets[], int i);
 void Union(subset subsets[], int x, int y);
 int myComp(const void* a, const void* b);
 Graph* createGraph(int V, int E);
-
+Graph* createGraph(int V, int E, Edge* allEdges);
+Edge* createEdge(int src, int dest, int weight);
 
 
 #endif /* GRAPHS_HPP_ */
