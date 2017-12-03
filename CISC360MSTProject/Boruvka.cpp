@@ -110,9 +110,8 @@ int Boruvka_main(Graph* graph1) {
 	            4       */
 	    //int V = 4;  // Number of vertices in graph
 	    //int E = 5;  // Number of edges in graph
-	    //Graph* graph1 = createGraph(V, E);
 
-
+/*
 	    // add edge 0-1
 	    graph1->edge[0].src = 0;
 	    graph1->edge[0].dest = 1;
@@ -137,6 +136,7 @@ int Boruvka_main(Graph* graph1) {
 	    graph1->edge[4].src = 2;
 	    graph1->edge[4].dest = 3;
 	    graph1->edge[4].weight = 4;
+	    */
 
 	    boruvkaMST(graph1);
 

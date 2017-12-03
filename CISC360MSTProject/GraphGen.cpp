@@ -7,7 +7,7 @@
 
 #include "Graphs.hpp"
 
-Graph generateRandGraphs(int NOE, int NOV){
+Graph* generateRandGraphs(int NOV, int NOE){
 	int max = 100;
 	int i = 0;
 	int edges[NOE][2];
@@ -32,7 +32,7 @@ Graph generateRandGraphs(int NOE, int NOV){
 		allEdges[i] = e;
 	}
 	Graph* g = createGraph(NOV, NOE, *allEdges);
-	return (*g);
+	return (g);
 }
 
 

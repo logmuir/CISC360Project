@@ -8,11 +8,13 @@
 #include "Boruvka.hpp"
 #include "Kruskal.hpp"
 #include "Prim.hpp"
+#include "GraphGen.hpp"
 
 int main() {
 
-	Graph* graph = createGraph(4, 5);
+
+	Graph* graph = generateRandGraphs(4, 5);
 	Boruvka_main(graph);
-	Kruskal_main(graph);
+//	Kruskal_main(graph);
 }
 

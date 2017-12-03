@@ -24,7 +24,7 @@ Graph* createGraph(int V, int E) {
 	graph->V = V;
 	graph->E = E;
 
-	graph->edge;
+	graph->edge = new Edge[E];
 
 	return (graph);
 }

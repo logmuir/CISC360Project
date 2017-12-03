@@ -1,5 +1,5 @@
 Main.o: ../Main.cpp ../Boruvka.hpp ../Graphs.hpp ../Kruskal.hpp \
- ../Prim.hpp
+  ../Prim.hpp ../GraphGen.hpp
 
 ../Boruvka.hpp:
 
@@ -8,3 +8,5 @@ Main.o: ../Main.cpp ../Boruvka.hpp ../Graphs.hpp ../Kruskal.hpp \
 ../Kruskal.hpp:
 
 ../Prim.hpp:
+
+../GraphGen.hpp:
