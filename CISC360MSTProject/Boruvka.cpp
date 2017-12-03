@@ -29,8 +29,9 @@ void boruvkaMST(Graph* graph)
     for (int v = 0; v < V; ++v)
     {
         subsets[v].parent = v;
+        cout << subsets[v].parent << endl;
         subsets[v].rank = 0;
-        cheapest[v] = -1;
+        cout << subsets[v].rank << endl;
     }
 
     // Initially there are V different trees.
@@ -42,12 +43,17 @@ void boruvkaMST(Graph* graph)
     // compnentes are not combined into single MST.
     while (numTrees > 1)
     {
+    	for (int v = 0; v < V; ++v) {
+    		cheapest[v] = -1;
+    	}
         // Traverse through all edges and update
         // cheapest of every component
         for (int i=0; i<E; i++)
         {
             // Find components (or sets) of two corners
             // of current edge
+        	cout << edge[i].src << endl;
+        	cout << edge[i].dest << endl;
             int set1 = find(subsets, edge[i].src);
             int set2 = find(subsets, edge[i].dest);
 
@@ -64,7 +70,7 @@ void boruvkaMST(Graph* graph)
                    edge[cheapest[set1]].weight > edge[i].weight)
                  cheapest[set1] = i;
 
-               if (cheapest[set1] == -1 ||
+               if (cheapest[set2] == -1 ||
                    edge[cheapest[set2]].weight > edge[i].weight)
                  cheapest[set2] = i;
             }
@@ -136,8 +142,7 @@ int Boruvka_main(Graph* graph1) {
 	    graph1->edge[4].src = 2;
 	    graph1->edge[4].dest = 3;
 	    graph1->edge[4].weight = 4;
-	    */
-
+*/
 	    boruvkaMST(graph1);
 
 	    return (0);

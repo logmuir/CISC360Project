@@ -8,7 +8,10 @@
 #ifndef GRAPHGEN_HPP_
 #define GRAPHGEN_HPP_
 
-Graph* generateRandGraphs(int NOE, int NOV);
+#include "Graphs.hpp"
+using namespace std;
+
+Graph* generateRandGraphs(int NOV, int NOE);
 
 
 

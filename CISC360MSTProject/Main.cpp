@@ -9,11 +9,12 @@
 #include "Kruskal.hpp"
 #include "Prim.hpp"
 #include "GraphGen.hpp"
+#include <ctime>
 
 int main() {
 
-
-	Graph* graph = generateRandGraphs(4, 5);
+	srand(time(NULL));
+	Graph* graph = generateRandGraphs(4, 4);
 	Boruvka_main(graph);
 //	Kruskal_main(graph);
 }

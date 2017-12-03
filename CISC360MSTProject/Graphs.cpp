@@ -29,13 +29,13 @@ Graph* createGraph(int V, int E) {
 	return (graph);
 }
 
-Edge* createEdge(int src, int dest, int weight) {
+Edge createEdge(int src, int dest, int weight) {
 	Edge* edge = new Edge;
 	edge->src = src;
 	edge->dest = dest;
 	edge->weight = weight;
 
-	return (edge);
+	return (*edge);
 }
 
 // A utility function to find set of an element i
