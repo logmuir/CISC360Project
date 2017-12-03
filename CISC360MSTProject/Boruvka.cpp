@@ -29,9 +29,7 @@ void boruvkaMST(Graph* graph)
     for (int v = 0; v < V; ++v)
     {
         subsets[v].parent = v;
-        cout << subsets[v].parent << endl;
         subsets[v].rank = 0;
-        cout << subsets[v].rank << endl;
     }
 
     // Initially there are V different trees.
@@ -52,8 +50,6 @@ void boruvkaMST(Graph* graph)
         {
             // Find components (or sets) of two corners
             // of current edge
-        	cout << edge[i].src << endl;
-        	cout << edge[i].dest << endl;
             int set1 = find(subsets, edge[i].src);
             int set2 = find(subsets, edge[i].dest);
 

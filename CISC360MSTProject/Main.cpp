@@ -16,6 +16,6 @@ int main() {
 	srand(time(NULL));
 	Graph* graph = generateRandGraphs(4, 4);
 	Boruvka_main(graph);
-//	Kruskal_main(graph);
+	Kruskal_main(graph);
 }
 

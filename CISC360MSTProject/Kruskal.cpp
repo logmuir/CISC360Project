@@ -80,7 +80,7 @@ int Kruskal_main(Graph* graph2) {
 	//int V = 4;  // Number of vertices in graph
 	//int E = 5;  // Number of edges in graph
 	//Graph* graph2 = createGraph(V, E);
-
+/*
 	// add edge 0-1
 	graph2->edge[0].src = 0;
 	graph2->edge[0].dest = 1;
@@ -105,7 +105,7 @@ int Kruskal_main(Graph* graph2) {
 	graph2->edge[4].src = 2;
 	graph2->edge[4].dest = 3;
 	graph2->edge[4].weight = 4;
-
+*/
 	KruskalMST(graph2);
 
 	return (0);
