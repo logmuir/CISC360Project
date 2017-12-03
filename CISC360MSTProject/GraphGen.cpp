@@ -8,7 +8,7 @@
 #include "Graphs.hpp"
 
 Graph* generateRandGraphs(int NOV, int NOE){
-	int max = 100;
+	int max = 10;
 	int i = 0;
 	int edges[NOE][2];
 	Edge **allEdges = new Edge*[NOE];
@@ -32,6 +32,11 @@ Graph* generateRandGraphs(int NOV, int NOE){
 		allEdges[i] = e;
 	}
 	Graph* g = createGraph(NOV, NOE, *allEdges);
+	cout << NOV <<endl;
+	cout << NOE << endl;
+	for(int i = 0; i < NOE; i++){
+		cout << allEdges[i]->src << " " << allEdges[i]->weight << " " << allEdges[i]->dest << endl;
+	}
 	return (g);
 }
 

@@ -11,7 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//using namespace std;
+#include<iostream>
+using namespace std;
 
 
 // a structure to represent a weighted edge in graph
