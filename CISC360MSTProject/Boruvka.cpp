@@ -85,8 +85,8 @@ void boruvkaMST(Graph* graph)
                 if (set1 == set2)
                     continue;
                 MSTweight += edge[cheapest[i]].weight;
-                printf("Edge %d-%d included in MST\n",
-                       edge[cheapest[i]].src, edge[cheapest[i]].dest);
+            //    printf("Edge %d-%d included in MST\n",
+            //           edge[cheapest[i]].src, edge[cheapest[i]].dest);
 
                 // Do a union of set1 and set2 and decrease number
                 // of trees
@@ -96,7 +96,7 @@ void boruvkaMST(Graph* graph)
         }
     }
 
-    printf("Weight of MST is %d\n", MSTweight);
+   // printf("Weight of MST is %d\n", MSTweight);
     return;
 }
 

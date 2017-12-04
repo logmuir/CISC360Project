@@ -10,5 +10,8 @@
 
 #include "Graphs.hpp"
 
+void primMST(Graph* g);
+int printPrimMST(int parent[], int n, Graph* g);
+int Prim_main(Graph* graph);
 
 #endif /* PRIM_HPP_ */

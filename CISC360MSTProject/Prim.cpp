@@ -12,11 +12,13 @@
 #include "Prim.hpp"
 
 // Number of vertices in the graph
-#define V 5
 
 // A utility function to find the vertex with minimum key value, from
 // the set of vertices not yet included in MST
-int minKey(int key[], bool mstSet[]) {
+int minKey(int key[], bool mstSet[],Graph* g) {
+	//Number of vertices
+	int V = g->V;
+
 	// Initialize min value
 	int min = INT_MAX, min_index;
 
@@ -28,7 +30,9 @@ int minKey(int key[], bool mstSet[]) {
 }
 
 // A utility function to print the constructed MST stored in parent[]
-int printPrimMST(int parent[], int n, int graph[V][V]) {
+int printPrimMST(int parent[], int n, Graph* g) {
+	int V = g->V;
+	int graph[g->V][g->E];
 	printf("Edge   Weight\n");
 	for (int i = 1; i < V; i++)
 		printf("%d - %d    %d \n", parent[i], i, graph[i][parent[i]]);
@@ -37,10 +41,14 @@ int printPrimMST(int parent[], int n, int graph[V][V]) {
 
 // Function to construct and print MST for a graph represented using adjacency
 // matrix representation
-void primMST(int graph[V][V]) {
+void primMST(Graph* g) {
+	int V = g->V;
 	int parent[V]; // Array to store constructed MST
 	int key[V];   // Key values used to pick minimum weight edge in cut
 	bool mstSet[V];  // To represent set of vertices not yet included in MST
+
+	//2D graph representation
+	int graph[g->V][g->E];
 
 	// Initialize all keys as INFINITE
 	for (int i = 0; i < V; i++)
@@ -54,7 +62,7 @@ void primMST(int graph[V][V]) {
 	for (int count = 0; count < V - 1; count++) {
 		// Pick the minimum key vertex from the set of vertices
 		// not yet included in MST
-		int u = minKey(key, mstSet);
+		int u = minKey(key, mstSet, g);
 
 		// Add the picked vertex to the MST Set
 		mstSet[u] = true;
@@ -72,12 +80,12 @@ void primMST(int graph[V][V]) {
 	}
 
 	// print the constructed MST
-	printPrimMST(parent, V, graph);
+	printPrimMST(parent, V, g);
 	return;
 }
 
 // driver program to test above function
-int Prim_main() {
+int Prim_main(Graph* graph) {
 	/* Let us create the following graph
 	    2    3
 	 (0)--(1)--(2)
@@ -86,8 +94,7 @@ int Prim_main() {
 	 | /     \ |
 	 (3)-------(4)
 	       9          */
-	int graph[V][V] = { { 0, 2, 0, 6, 0 }, { 2, 0, 3, 8, 5 }, { 0, 3, 0, 0, 7 },
-			{ 6, 8, 0, 0, 9 }, { 0, 5, 7, 9, 0 }, };
+
 
 	// Print the solution
 	primMST(graph);

@@ -9,6 +9,8 @@
 #define KRUSKAL_HPP_
 
 #include "Graphs.hpp"
+#include<iostream>
+using namespace std;
 
 void KruskalMST(Graph* graph);
 int Kruskal_main(Graph* graph);
