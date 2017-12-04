@@ -13,6 +13,7 @@
 #include <chrono>
 #include <ctime>
 #include <thread>
+#include <fstream>>
 using namespace std;
 
 int main() {
@@ -20,8 +21,18 @@ int main() {
 	srand(time(NULL));
 	int numVerts = 100;
 	//int numEdges = (((numVerts - 1) * (numVerts - 2))/2) + 1;
-	int  numEdges = 500;
+	int  numEdges = 300;
 	Graph* graph = generateRandGraphs(numVerts, numEdges);
+	ofstream myFileStream;
+	myFileStream.open("chris.txt", ios::app);
+	myFileStream << graph->V << "," << graph->E;
+	/*
+	for (int x = 0; x < numEdges; x++){
+		Edge e = graph->edge[x];
+		myFileStream << e.src << " " << e.dest << " " << e.weight << ",";
+	}
+	*/
+
 
 	clock_t startTime = clock();
 	Boruvka_main(graph);
@@ -29,6 +40,7 @@ int main() {
 	clock_t clockTicksTaken = endTime - startTime;
 	double timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
 	cout << "Boruvka's CPU Time (seconds): "<< timeInSeconds <<endl;
+	myFileStream << "," << timeInSeconds;
 
 	startTime = clock();
 	Kruskal_main(graph);
@@ -36,9 +48,10 @@ int main() {
 	clockTicksTaken = endTime - startTime;
 	timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
 	cout<< "Kruskal's CPU Time (seconds): "<< timeInSeconds <<endl;
-
+	myFileStream << "," << timeInSeconds << "\n";
 
 	//	Kruskal_main(graph);
-	//	Prim_main(graph);
+	// Prim_main(graph);
+	myFileStream.close();
 }
 
