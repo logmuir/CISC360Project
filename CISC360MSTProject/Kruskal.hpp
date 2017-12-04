@@ -14,6 +14,7 @@ using namespace std;
 
 void KruskalMST(Graph* graph);
 int Kruskal_main(Graph* graph);
+Edge* Kruskal_sort(Edge* edges, int num_edges);
 
 
 

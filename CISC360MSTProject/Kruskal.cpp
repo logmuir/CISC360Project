@@ -22,15 +22,22 @@ void KruskalMST(Graph* graph)
 	// order of their weight. If we are not allowed to
 	// change the given graph, we can create a copy of
 	// array of edges
+
+	//print statements to check sorting
+	/*
 	cout << "BEFORE QSORT" << endl;
 	for (int i = 0; i < E; i++){
 		cout << result[i].src << " " << result[i].dest << " " << result[i].weight << endl;
 	}
-	qsort(result, E, sizeof(E[0]), myComp);
+	*/
+	//qsort(result, E, sizeof(result[0]), myComp);
+	result = Kruskal_sort(result, E);
+	/*
 	cout << "AFTER QSORT" << endl;
 	for (int i = 0; i < E; i++){
 			cout << result[i].src << " " << result[i].dest << " " << result[i].weight << endl;
 	}
+	*/
 
 	// Allocate memory for creating V subsets
 	subset *subsets =
@@ -76,6 +83,20 @@ void KruskalMST(Graph* graph)
 	cout << "MST weight: " << MSTweight << endl;
 
 	return;
+}
+
+Edge* Kruskal_sort(Edge* edges, int num_edges){
+	Edge tmp;
+	for (int i=0; i<num_edges; i++){
+		for (int j=i+1; j<num_edges; j++){
+			if (edges[i].weight > edges[j].weight){
+				tmp = edges[i];
+				edges[i] = edges[j];
+				edges[j] = tmp;
+			}
+		}
+	}
+	return (edges);
 }
 
 // Driver program to test above functions

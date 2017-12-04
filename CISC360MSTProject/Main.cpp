@@ -18,7 +18,7 @@ using namespace std;
 int main() {
 
 	srand(time(NULL));
-	int numVerts = 7;
+	int numVerts = 100;
 	int numEdges = (((numVerts - 1) * (numVerts - 2))/2) + 1;
 	Graph* graph = generateRandGraphs(numVerts, numEdges);
 
