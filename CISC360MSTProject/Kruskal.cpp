@@ -13,8 +13,8 @@
 // The main function to construct MST using Kruskal's algorithm
 void KruskalMST(Graph* graph)
 {
-	int V = graph->V;
-	Edge result[V];  // Tnis will store the resultant MST
+	int V = graph->V, E = graph->E;
+	Edge* result = graph->edge;  // This will store the resultant MST
 	int e = 0;  // An index variable, used for result[]
 	int i = 0;  // An index variable, used for sorted edges
 
@@ -22,7 +22,15 @@ void KruskalMST(Graph* graph)
 	// order of their weight. If we are not allowed to
 	// change the given graph, we can create a copy of
 	// array of edges
-	qsort(graph->edge, graph->E, sizeof(graph->edge[0]), myComp);
+	cout << "BEFORE QSORT" << endl;
+	for (int i = 0; i < E; i++){
+		cout << result[i].src << " " << result[i].dest << " " << result[i].weight << endl;
+	}
+	qsort(result, E, sizeof(E[0]), myComp);
+	cout << "AFTER QSORT" << endl;
+	for (int i = 0; i < E; i++){
+			cout << result[i].src << " " << result[i].dest << " " << result[i].weight << endl;
+	}
 
 	// Allocate memory for creating V subsets
 	subset *subsets =
@@ -59,11 +67,13 @@ void KruskalMST(Graph* graph)
 	// print the contents of result[] to display the
 	// built MST
 	int MSTweight = 0;
-	//printf("Following are the edges in the constructed MST\n");
-//	for (i = 0; i < e; ++i){
-	//			printf("%d -- %d == %d\n", result[i].src, result[i].dest,
-	//					result[i].weight);
-//	}
+	printf("Following are the edges in the constructed MST\n");
+	for (i = 0; i < e; ++i){
+				printf("%d -- %d == %d\n", result[i].src, result[i].dest,
+						result[i].weight);
+				MSTweight += result[i].weight;
+	};
+	cout << "MST weight: " << MSTweight << endl;
 
 	return;
 }

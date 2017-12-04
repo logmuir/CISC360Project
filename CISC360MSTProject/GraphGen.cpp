@@ -32,9 +32,9 @@ Graph* generateRandGraphs(int NOV, int NOE){
 		allEdges[i] = e;
 	}
 	Graph* g = createGraph(NOV, NOE, allEdges);
-//	for(int i = 0; i < NOE; i++){
-//		cout << i <<" " << allEdges[i].src << " " << allEdges[i].dest << " " << allEdges[i].weight << endl;
-//	}
+	for(int i = 0; i < NOE; i++){
+		cout << i <<" " << allEdges[i].src << " " << allEdges[i].dest << " " << allEdges[i].weight << endl;
+	}
 	return (g);
 }
 

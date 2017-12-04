@@ -36,4 +36,11 @@ CPP_DEPS += \
 	@echo 'Finished building: $<'
 	@echo ' '
 
+Main.o: ../Main.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C++ Compiler'
+	g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -std=gnu++11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"Main.d" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 
