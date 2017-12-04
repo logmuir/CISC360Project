@@ -19,7 +19,8 @@ int main() {
 
 	srand(time(NULL));
 	int numVerts = 100;
-	int numEdges = (((numVerts - 1) * (numVerts - 2))/2) + 1;
+	//int numEdges = (((numVerts - 1) * (numVerts - 2))/2) + 1;
+	int  numEdges = 500;
 	Graph* graph = generateRandGraphs(numVerts, numEdges);
 
 	clock_t startTime = clock();
@@ -27,14 +28,14 @@ int main() {
 	clock_t endTime = clock();
 	clock_t clockTicksTaken = endTime - startTime;
 	double timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
-	cout<<"Boruvka's CPU Time (seconds): "<< timeInSeconds <<endl;
+	cout << "Boruvka's CPU Time (seconds): "<< timeInSeconds <<endl;
 
 	startTime = clock();
 	Kruskal_main(graph);
 	endTime = clock();
 	clockTicksTaken = endTime - startTime;
 	timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
-	cout<<"Kruskal's CPU Time (seconds): "<< timeInSeconds <<endl;
+	cout<< "Kruskal's CPU Time (seconds): "<< timeInSeconds <<endl;
 
 
 	//	Kruskal_main(graph);

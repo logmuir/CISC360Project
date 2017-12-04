@@ -50,8 +50,10 @@ void KruskalMST(Graph* graph)
 		subsets[v].rank = 0;
 	}
 
+	int numTrees = V;
 	// Number of edges to be taken is equal to V-1
-	while (e < V - 1)
+	//while (e < E)
+	for (i = 0; i < E;)
 	{
 		// Step 2: Pick the smallest edge. And increment
 		// the index for next iteration
@@ -67,8 +69,14 @@ void KruskalMST(Graph* graph)
 		{
 			result[e++] = next_edge;
 			Union(subsets, x, y);
+			numTrees --;
 		}
 		// Else discard the next_edge
+	}
+	if (numTrees>1) {
+		cout << "DISJOINT" << endl;
+		cout << "NO MST" << endl;
+		return;
 	}
 
 	// print the contents of result[] to display the

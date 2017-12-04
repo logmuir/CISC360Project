@@ -38,8 +38,9 @@ void boruvkaMST(Graph* graph)
     int MSTweight = 0;
 
     // Keep combining components (or sets) until all
-    // compnentes are not combined into single MST.
-    while (numTrees > 1)
+    // components are not combined into single MST.
+    //while (numTrees > 1)
+    for (int x = 0; x<E; x++)
     {
     	for (int v = 0; v < V; ++v) {
     		cheapest[v] = -1;
@@ -94,6 +95,10 @@ void boruvkaMST(Graph* graph)
                 numTrees--;
             }
         }
+    } if (numTrees!=1){
+    	cout << "DISJOINT" << endl;
+    	cout << "NO MST" << endl;
+    	return;
     }
 
     printf("Weight of MST is %d\n", MSTweight);
