@@ -27,14 +27,14 @@ int main() {
 	clock_t endTime = clock();
 	clock_t clockTicksTaken = endTime - startTime;
 	double timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
-	cout<<"Boruvka's CPU Time: "<< timeInSeconds <<endl;
+	cout<<"Boruvka's CPU Time (seconds): "<< timeInSeconds <<endl;
 
 	startTime = clock();
 	Kruskal_main(graph);
 	endTime = clock();
 	clockTicksTaken = endTime - startTime;
 	timeInSeconds = clockTicksTaken / (double) CLOCKS_PER_SEC;
-	cout<<"Kruskal's CPU Time: "<< timeInSeconds <<endl;
+	cout<<"Kruskal's CPU Time (seconds): "<< timeInSeconds <<endl;
 
 
 	//	Kruskal_main(graph);
